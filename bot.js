@@ -56,4 +56,5 @@ client.on("message", async message => {
       }
    );
 
-client.login(config.token);
+const token = process.env.token;
+client.login(token);
