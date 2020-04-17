@@ -15,6 +15,11 @@ express()
 .get('/', (req, res) => res.render('pages/index'))
 .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+var http = require('http');
+setInterval(() => {
+    http.get('http://[app-name].herokuapp.com/');
+}, 1000*60*14);
+
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
   client.user.setPresence({ game: { name: 'comando', type: 1, url: 'discord.gg/rde'} });
