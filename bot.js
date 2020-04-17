@@ -1,7 +1,6 @@
 const Discord = require("discord.js"); //baixar a lib
 const client = new Discord.Client(); 
 const config = require("./config.json"); 
-const token = process.env.token;
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
