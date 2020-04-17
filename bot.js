@@ -1,10 +1,11 @@
 const Discord = require("discord.js"); //baixar a lib
 const client = new Discord.Client(); 
-const config = require("./config.json"); 
+const config = require("./config.json");
+const token = process.env.token;
 
 client.on("ready", () => {
   console.log(`Bot foi iniciado, com ${client.users.size} usuários, em ${client.channels.size} canais, em ${client.guilds.size} servidores.`); 
-  client.user.setPresence({ game: { name: 'comando', type: 1, url: 'https://www.twitch.tv/pedroricardo'} });
+  client.user.setPresence({ game: { name: 'comando', type: 1, url: 'discord.gg/rde'} });
     //0 = Jogando
     //  1 = Transmitindo
     //  2 = Ouvindo
@@ -56,5 +57,4 @@ client.on("message", async message => {
       }
    );
 
-const token = process.env.token;
 client.login(token);
